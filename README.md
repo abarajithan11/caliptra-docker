@@ -19,17 +19,11 @@ git submodule update --recursive
 
 ## Steps to start the container
 
-- Build the docker image using Docker compose.
 ```sh
-docker compose build
-```
-- Start your own container named `caliptra-$USERNAME` and enter
-```sh
-source start_container.sh
-```
-- Kill the container (if anything goes wrong)
-```sh
-source kill_container.sh
+make fresh    # Fresh container from scratch (kill, build, start)
+make enter    # Enter the container
+
+make restart  # Restart the containter (from outside. kill, start)
 ```
 
 ## Run Simulations
@@ -40,5 +34,4 @@ source scripts/helloworld_vcs.sh
 source scripts/iccm_lock_vcs.sh
 source ./scripts/sha256_vcs.sh
 ```
-
 
